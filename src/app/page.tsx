@@ -1,65 +1,288 @@
-import Image from "next/image";
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import Hero from '@/components/Hero';
+import ClassCard from '@/components/ClassCard';
+import SectionHeading from '@/components/SectionHeading';
+import TestimonialCard from '@/components/TestimonialCard';
+import CTABanner from '@/components/CTABanner';
+import FadeIn from '@/components/FadeIn';
+import JsonLd from '@/components/JsonLd';
+import { localBusinessSchema } from '@/lib/schema';
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'Yoga & Pilates Classes Scottish Highlands | Present Heart Living',
+  description:
+    'Yoga, Pilates and breathwork classes in the Scottish Highlands near Inverness. Mindful movement, restorative practices and yoga retreats Scotland. Book your class today.',
+  alternates: { canonical: 'https://presentheartliving.co.uk' },
+  openGraph: {
+    title: 'Yoga & Pilates Classes Scottish Highlands | Present Heart Living',
+    description:
+      'Yoga, Pilates and breathwork classes in the Scottish Highlands near Inverness. Mindful movement, restorative practices and yoga retreats Scotland. Book your class today.',
+    url: 'https://presentheartliving.co.uk',
+    siteName: 'Present Heart Living',
+    locale: 'en_GB',
+    type: 'website',
+  },
+};
+
+const classes = [
+  {
+    title: 'Seasonal Flow Yoga',
+    description:
+      'A flowing practice combining breath and movement to build strength, flexibility and body awareness through the seasons.',
+    href: '/classes/seasonal-flow-yoga',
+    icon: '🌿',
+  },
+  {
+    title: 'Restorative Yoga',
+    description:
+      'A deeply relaxing practice designed to calm the nervous system and encourage profound rest and recovery.',
+    href: '/classes/restorative-yoga',
+    icon: '🕊️',
+  },
+  {
+    title: 'Yin Yoga',
+    description:
+      'A slower, reflective practice that supports joint mobility, connective tissue health and mindful awareness.',
+    href: '/classes/yin-yoga',
+    icon: '🌙',
+  },
+  {
+    title: 'Pilates',
+    description:
+      'Controlled movement, alignment and core strength to support healthy posture and balanced movement.',
+    href: '/classes/pilates',
+    icon: '💪',
+  },
+  {
+    title: 'Breathwork',
+    description:
+      'Conscious breathing techniques for relaxation, emotional balance and stress relief.',
+    href: '/classes/breathwork',
+    icon: '🌬️',
+  },
+  {
+    title: 'Sound Baths',
+    description:
+      'Immersive relaxation using singing bowls and resonant instruments to encourage deep calm.',
+    href: '/classes/sound-baths',
+    icon: '🔔',
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Audrey's classes have been transformative for me. After years of high-stress work, finding Present Heart Living was exactly what I needed. The calm, supportive environment makes every session feel like a sanctuary.",
+    author: 'Sarah M.',
+    context: 'Yoga student, Inverness',
+  },
+  {
+    quote:
+      "I was nervous about trying yoga as a complete beginner, but Audrey made me feel so welcome from the very first class. Six months on, I'm more flexible, sleeping better and feeling genuinely calmer.",
+    author: 'James T.',
+    context: 'Beginner student, Black Isle',
+  },
+  {
+    quote:
+      "The sound bath experience was unlike anything I've tried before — deeply restorative and incredibly peaceful. I left feeling renewed and have been coming back every month since.",
+    author: 'Fiona K.',
+    context: 'Sound bath attendee, Dingwall',
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <JsonLd data={localBusinessSchema as unknown as Record<string, unknown>} />
+
+      {/* Hero */}
+      <Hero
+        title="Yoga & Pilates Classes in the Scottish Highlands"
+        subtitle="Movement, breath and awareness for a balanced life. Present Heart Living offers mindful yoga, Pilates and breathwork practices near Inverness — welcoming all levels."
+        primaryCTA={{ label: 'Book a Class', href: '/contact' }}
+        secondaryCTA={{ label: 'Explore Classes', href: '/classes' }}
+      />
+
+      {/* Intro */}
+      <section className="py-16 md:py-24">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <SectionHeading
+            title="A Space to Slow Down and Reconnect"
+            subtitle="Creating calm amid the beauty of the Scottish Highlands"
+          />
+          <FadeIn delay={0.2}>
+            <p className="mt-6 text-peat/70 leading-relaxed">
+              Modern life often moves quickly, leaving little time to pause and care for our wellbeing.
+              Present Heart Living provides a calm and supportive environment in the heart of the Scottish
+              Highlands where people can step away from the demands of daily life and reconnect with
+              themselves through mindful movement and breath awareness.
+            </p>
+            <p className="mt-4 text-peat/70 leading-relaxed">
+              The aim is not to achieve perfect poses, but to develop strength, flexibility and a deeper
+              understanding of how the body moves and feels. Whether you live in Inverness, the Black Isle,
+              Dingwall or anywhere across the Highlands, you are warmly welcomed to join our community of
+              mindful practitioners.
+            </p>
+          </FadeIn>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Classes Grid */}
+      <section className="py-16 md:py-24 bg-sand/10">
+        <div className="max-w-6xl mx-auto px-4">
+          <SectionHeading
+            title="Yoga and Pilates Classes in the Highlands"
+            subtitle="A range of practices designed to support both physical and mental wellbeing"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            {classes.map((cls, i) => (
+              <ClassCard key={cls.href} {...cls} delay={i * 0.08} />
+            ))}
+          </div>
+          <FadeIn delay={0.5}>
+            <div className="text-center mt-10">
+              <Link
+                href="/classes"
+                className="inline-flex items-center gap-2 text-sage font-medium hover:text-forest transition-colors"
+              >
+                View all classes →
+              </Link>
+            </div>
+          </FadeIn>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Retreats */}
+      <section className="py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <FadeIn direction="left">
+              <div className="bg-gradient-to-br from-forest/20 to-sage/20 rounded-2xl aspect-[4/3] flex items-center justify-center">
+                <span className="text-6xl">🏔️</span>
+              </div>
+            </FadeIn>
+            <FadeIn direction="right">
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl text-forest mb-4">
+                Yoga Retreats in Scotland and Beyond
+              </h2>
+              <p className="text-peat/70 leading-relaxed mb-4">
+                Retreats offer the opportunity to step away from everyday routines and reconnect with what
+                matters most. Present Heart Living yoga retreats in Scotland combine yoga, breathwork and
+                mindfulness practices with time in nature, creating space for reflection, rest and renewed
+                energy amid the stunning Scottish Highlands landscape.
+              </p>
+              <p className="text-peat/70 leading-relaxed mb-6">
+                Whether you choose a weekend retreat in the Highlands or an international wellness
+                experience, each retreat is designed to support deep rest, personal reflection and meaningful
+                connection with yourself and nature.
+              </p>
+              <Link
+                href="/retreats"
+                className="inline-flex items-center gap-2 bg-sage text-white px-6 py-3 rounded-lg font-medium hover:bg-forest transition-colors"
+              >
+                Explore Retreats
+              </Link>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 md:py-24 bg-mist/30">
+        <div className="max-w-6xl mx-auto px-4">
+          <SectionHeading
+            title="What Our Students Say"
+            subtitle="Experiences from our yoga community across the Highlands"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            {testimonials.map((t, i) => (
+              <TestimonialCard key={i} {...t} delay={i * 0.1} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Meet Audrey */}
+      <section className="py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <FadeIn direction="right" className="order-2 lg:order-1">
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl text-forest mb-4">
+                Meet Audrey Buchanan
+              </h2>
+              <p className="text-peat/70 leading-relaxed mb-4">
+                Present Heart Living was founded by Audrey Buchanan, an experienced teacher with more than
+                thirty years of personal yoga practice based in the Scottish Highlands. With a 500-hour Yoga
+                Alliance qualification, breathwork certification and trauma-informed training, Audrey brings
+                genuine depth to every class.
+              </p>
+              <p className="text-peat/70 leading-relaxed mb-6">
+                Her background in education — as both a primary teacher and head teacher — shapes her
+                clear, supportive teaching style. Audrey encourages students to move with awareness and
+                develop practices that support wellbeing beyond the mat.
+              </p>
+              <Link
+                href="/about/audrey-buchanan"
+                className="inline-flex items-center gap-2 text-sage font-medium hover:text-forest transition-colors"
+              >
+                Learn more about Audrey →
+              </Link>
+            </FadeIn>
+            <FadeIn direction="left" className="order-1 lg:order-2">
+              <div className="bg-gradient-to-br from-sage/20 to-clay/20 rounded-2xl aspect-[3/4] max-w-sm mx-auto flex items-center justify-center">
+                <span className="text-6xl">🧘‍♀️</span>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Class Schedule Teaser */}
+      <section className="py-16 md:py-20 bg-sand/10">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <SectionHeading
+            title="Weekly Class Schedule"
+            subtitle="Join us for regular yoga and Pilates classes in the Scottish Highlands"
+          />
+          <FadeIn delay={0.2}>
+            <div className="mt-10 bg-white rounded-xl border border-mist/50 overflow-hidden">
+              <div className="grid grid-cols-3 md:grid-cols-5 bg-forest text-white text-sm font-medium">
+                <div className="p-3">Day</div>
+                <div className="p-3">Class</div>
+                <div className="p-3 hidden md:block">Time</div>
+                <div className="p-3 hidden md:block">Duration</div>
+                <div className="p-3">Level</div>
+              </div>
+              {[
+                { day: 'Monday', cls: 'Seasonal Flow Yoga', time: '9:30am', dur: '75 min', level: 'All levels' },
+                { day: 'Tuesday', cls: 'Pilates', time: '10:00am', dur: '60 min', level: 'All levels' },
+                { day: 'Wednesday', cls: 'Yin Yoga', time: '7:00pm', dur: '75 min', level: 'All levels' },
+                { day: 'Thursday', cls: 'Restorative Yoga', time: '10:00am', dur: '75 min', level: 'All levels' },
+                { day: 'Friday', cls: 'Breathwork', time: '9:30am', dur: '60 min', level: 'All levels' },
+                { day: 'Saturday', cls: 'Sound Bath', time: '10:00am', dur: '90 min', level: 'All levels' },
+              ].map((row, i) => (
+                <div key={i} className={`grid grid-cols-3 md:grid-cols-5 text-sm ${i % 2 === 0 ? 'bg-linen/50' : ''}`}>
+                  <div className="p-3 font-medium text-forest">{row.day}</div>
+                  <div className="p-3 text-peat/70">{row.cls}</div>
+                  <div className="p-3 text-peat/70 hidden md:block">{row.time}</div>
+                  <div className="p-3 text-peat/70 hidden md:block">{row.dur}</div>
+                  <div className="p-3 text-peat/50 text-xs">{row.level}</div>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-peat/50 mt-4">Schedule is indicative. Please contact us to confirm class times and availability.</p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <CTABanner
+        heading="Begin Your Yoga Journey in the Highlands"
+        description="Whether you are new to yoga or returning after time away, Present Heart Living offers a welcoming place to begin or deepen your practice in the Scottish Highlands."
+        primaryCTA={{ label: 'Book Your First Class', href: '/contact' }}
+        secondaryCTA={{ label: 'Explore Classes', href: '/classes' }}
+      />
+    </>
   );
 }
