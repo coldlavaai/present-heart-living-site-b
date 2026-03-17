@@ -116,7 +116,7 @@ export default function HomePage() {
         subtitle="Movement, breath and awareness for a balanced life. Present Heart Living offers mindful yoga, Pilates and breathwork practices near Inverness — welcoming all levels."
         primaryCTA={{ label: 'Book a Class', href: '/contact' }}
         secondaryCTA={{ label: 'Explore Classes', href: '/classes' }}
-        imageSrc="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&h=900&fit=crop"
+        imageSrc="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1600&h=900&fit=crop"
         imageAlt="Yoga practice in natural light in the Scottish Highlands"
       />
 

@@ -44,18 +44,18 @@ export default function Hero({
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-white/40 to-white/30" />
         </>
       )}
       <div className="relative z-10 max-w-4xl mx-auto px-4">
         <FadeIn>
-          <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-white mb-4 drop-shadow-sm" style={{ color: '#FFFFFF' }}>
+          <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-forest mb-4 drop-shadow-sm" style={{ color: '#2d3b2d' }}>
             {title}
           </h1>
         </FadeIn>
         {subtitle && (
           <FadeIn delay={0.15}>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
+            <p className="text-lg md:text-xl text-peat max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: '#4a5548' }}>
               {subtitle}
             </p>
           </FadeIn>
@@ -66,7 +66,8 @@ export default function Hero({
               {primaryCTA && (
                 <Link
                   href={primaryCTA.href}
-                  className="inline-flex items-center justify-center bg-white text-forest px-8 py-3.5 rounded-lg font-medium hover:bg-linen transition-colors"
+                  className="inline-flex items-center justify-center bg-sage text-white px-8 py-3.5 rounded-lg font-medium hover:bg-forest transition-colors"
+                  style={{ color: '#FFFFFF' }}
                 >
                   {primaryCTA.label}
                 </Link>
@@ -74,8 +75,8 @@ export default function Hero({
               {secondaryCTA && (
                 <Link
                   href={secondaryCTA.href}
-                  className="inline-flex items-center justify-center border border-white/40 text-white px-8 py-3.5 rounded-lg font-medium hover:bg-white/10 transition-colors"
-                  style={{ color: '#FFFFFF' }}
+                  className="inline-flex items-center justify-center border border-forest/40 text-forest px-8 py-3.5 rounded-lg font-medium hover:bg-forest/10 transition-colors"
+                  style={{ color: '#2d3b2d' }}
                 >
                   {secondaryCTA.label}
                 </Link>

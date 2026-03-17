@@ -62,7 +62,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-linen/95 backdrop-blur-md shadow-sm py-2' : 'bg-gradient-to-b from-black/40 to-transparent py-4'
+        scrolled ? 'bg-linen/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
@@ -87,7 +87,7 @@ export default function Header() {
             >
               <Link
                 href={item.href}
-                className="text-sm font-medium hover:text-sage transition-colors py-2" style={{ color: scrolled ? "#4a5568" : "#FFFFFF" }}
+                className="text-sm font-medium hover:text-sage transition-colors py-2" style={{ color: "#4a5568" }}
               >
                 {item.label}
               </Link>
@@ -121,7 +121,7 @@ export default function Header() {
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2" style={{ color: scrolled ? "#2d3b2d" : "#FFFFFF" }}
+            className="lg:hidden p-2" style={{ color: "#2d3b2d" }}
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
           >
