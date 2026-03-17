@@ -87,7 +87,7 @@ export default function Header() {
             >
               <Link
                 href={item.href}
-                className="text-sm font-medium hover:text-sage transition-colors py-2" style={{ color: "#4a5568" }}
+                className="text-sm font-medium hover:text-sage transition-colors py-2" style={{ color: '#7A8B6F' }}
               >
                 {item.label}
               </Link>
@@ -121,7 +121,7 @@ export default function Header() {
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2" style={{ color: "#2d3b2d" }}
+            className="lg:hidden p-2" style={{ color: '#7A8B6F' }}
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
           >

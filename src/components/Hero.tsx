@@ -49,13 +49,13 @@ export default function Hero({
       )}
       <div className="relative z-10 max-w-4xl mx-auto px-4">
         <FadeIn>
-          <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-forest mb-4 drop-shadow-sm" style={{ color: '#2d3b2d' }}>
+          <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-forest mb-4 drop-shadow-sm" style={{ color: '#3D4F3D' }}>
             {title}
           </h1>
         </FadeIn>
         {subtitle && (
           <FadeIn delay={0.15}>
-            <p className="text-lg md:text-xl text-peat max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: '#4a5548' }}>
+            <p className="text-lg md:text-xl text-peat max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: '#5a6b58' }}>
               {subtitle}
             </p>
           </FadeIn>
@@ -76,7 +76,7 @@ export default function Hero({
                 <Link
                   href={secondaryCTA.href}
                   className="inline-flex items-center justify-center border border-forest/40 text-forest px-8 py-3.5 rounded-lg font-medium hover:bg-forest/10 transition-colors"
-                  style={{ color: '#2d3b2d' }}
+                  style={{ color: '#3D4F3D' }}
                 >
                   {secondaryCTA.label}
                 </Link>
