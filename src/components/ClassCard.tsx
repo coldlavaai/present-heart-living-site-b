@@ -19,7 +19,7 @@ export default function ClassCard({ title, description, href, icon, imageSrc, im
     <FadeIn delay={delay}>
       <Link
         href={href}
-        className="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-mist/50 hover:border-sage/30"
+        className="group flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-mist/50 hover:border-sage/30 h-full"
       >
         {imageSrc ? (
           <div className="relative aspect-[3/2]">
@@ -36,7 +36,7 @@ export default function ClassCard({ title, description, href, icon, imageSrc, im
             <div className="text-4xl mb-4">{icon}</div>
           </div>
         ) : null}
-        <div className={imageSrc ? 'p-6' : icon ? 'px-8 pb-8' : 'p-8'}>
+        <div className={`flex-1 flex flex-col ${imageSrc ? 'p-6' : icon ? 'px-8 pb-8' : 'p-8'}`}>
           {!imageSrc && !icon && <div className="mb-4" />}
           <h3 className="font-heading text-xl text-forest mb-3 group-hover:text-sage transition-colors">
             {title}
@@ -44,7 +44,7 @@ export default function ClassCard({ title, description, href, icon, imageSrc, im
           <p className="text-peat/70 text-sm leading-relaxed mb-4">
             {description}
           </p>
-          <span className="text-sage text-sm font-medium group-hover:underline">
+          <span className="text-sage text-sm font-medium group-hover:underline mt-auto">
             Learn more →
           </span>
         </div>

@@ -79,7 +79,7 @@ const classes = [
       'Immersive relaxation using singing bowls and resonant instruments to encourage deep calm.',
     href: '/classes/sound-baths',
     icon: '🔔',
-    imageSrc: 'https://images.unsplash.com/photo-1591228127121-a8e0740d0e2a?w=600&h=400&fit=crop&q=80',
+    imageSrc: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&h=400&fit=crop&q=80',
     imageAlt: 'Sound bath with singing bowls',
   },
 ];
