@@ -34,7 +34,7 @@ const classes = [
       'A flowing practice combining breath and movement to build strength, flexibility and body awareness through the seasons.',
     href: '/classes/seasonal-flow-yoga',
     icon: '🌿',
-    imageSrc: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop',
+    imageSrc: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&h=400&fit=crop',
     imageAlt: 'Seasonal flow yoga practice',
   },
   {
@@ -116,7 +116,7 @@ export default function HomePage() {
         subtitle="Movement, breath and awareness for a balanced life. Present Heart Living offers mindful yoga, Pilates and breathwork practices near Inverness — welcoming all levels."
         primaryCTA={{ label: 'Book a Class', href: '/contact' }}
         secondaryCTA={{ label: 'Explore Classes', href: '/classes' }}
-        imageSrc="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1600&h=900&fit=crop"
+        imageSrc="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1600&h=900&fit=crop"
         imageAlt="Yoga practice in natural light in the Scottish Highlands"
       />
 
