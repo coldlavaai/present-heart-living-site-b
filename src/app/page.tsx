@@ -43,7 +43,7 @@ const classes = [
       'A deeply relaxing practice designed to calm the nervous system and encourage profound rest and recovery.',
     href: '/classes/restorative-yoga',
     icon: '🕊️',
-    imageSrc: 'https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=600&h=400&fit=crop',
+    imageSrc: 'https://images.unsplash.com/photo-1562088287-bde35a1ea917?w=600&h=400&fit=crop',
     imageAlt: 'Restorative yoga practice',
   },
   {
