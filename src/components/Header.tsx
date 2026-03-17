@@ -67,11 +67,11 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="transition-colors" style={{ color: scrolled ? '#2d3b2d' : '#FFFFFF' }}>
+        <Link href="/" className="transition-colors" style={{ color: '#7A8B6F' }}>
           <span className="font-heading text-xl md:text-2xl font-medium tracking-wide" style={{ color: 'inherit' }}>
             Present Heart Living
           </span>
-          <span className="hidden md:block text-xs tracking-widest mt-0.5" style={{ color: scrolled ? 'rgba(45,59,45,0.5)' : 'rgba(255,255,255,0.8)' }}>
+          <span className="hidden md:block text-xs tracking-widest mt-0.5" style={{ color: 'rgba(122,139,111,0.7)' }}>
             Yoga · Pilates · Breathwork · Retreats
           </span>
         </Link>
